@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>QuizLorem | Play</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-header">          
+          <h6>Timer :</h6>          
+        </div>
+        <div class="card-body">
+          <strong>List of all question</strong>          
+          {% for i in response.results %}
+            <h5>{{ i.question | safe }}</h5>
+            <input type="radio" name="ans" id="answer">   {{ i.correct_answer | safe }} <br>
+            <input type="radio" name="ans" id="answer">   {{ i.incorrect_answers.0 | safe }} <br>
+            <input type="radio" name="ans" id="answer">   {{ i.incorrect_answers.1 | safe }} <br>
+            <input type="radio" name="ans" id="answer">   {{ i.incorrect_answers.2 | safe }}
+            
+            <!--<input type="radio" name="ans" id="answer">   {{ i.incorrect_answers.2 | safe }}
+          {% endfor %}  -->
+
+        </div>
+        <div class="card-footer">    
+          <div class="text-center">      
+            <a href="#"><button class="submit-btn button1" type="submit">Show Answer</button></a>      
+            <a href="#"><button class="submit-btn button1" type="submit">Previous</button></a>      
+            <a href="#"><button class="submit-btn button1" type="submit">Next</button></a>      
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <img src="{% static 'img\avatar.png' %}" alt="Avatar" class="avatar">
+          <h5 class="text-center">Lorem Ipsum</h5>
+        </div>
+        <div class="card-footer">    
+          <div class="text-center">      
+            <a href="{% url 'result' %}"><button class="select-btn button1" type="submit">Submit</button></a>      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+{% endblock %}
+

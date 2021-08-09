@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>QuizLorem | Rules </title>
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="rule-card">
+  <div class="card">
+    <div class="card-header">
+      <br>
+      <h5 class="card-title text-center">Some Rules of this Quiz</h5>
+    </div>
+    <div class="card-body">
+      <span>&#9745; The admin can create multiple quizzes. </span> <br>
+      <span>&#9745; Each Quiz have 10 questions.</span> <br>
+      <span>&#9745; Users able to see a question with 4 possible answers.</span> <br>
+      <span>&#9745; The results are instant .</span> <br>
+      <span>&#9745; If incorrect the correct answer will be shown.</span> <br>
+      <span>&#9745; You will have only <span>15 seconds</span> per each question.</span> <br>
+      <span>&#9745; Once you select your answer, it can't be undone.</span> <br>
+      <span>&#9745; You can't exit from the Quiz while you're playing.</span> <br>
+      <span>&#9745; You can't select any option once time goes off.</span> <br>
+      <span>&#9745; You'll get points on the basis of your correct answers.</span> <br>
+      
+    </div>
+    <div class="card-footer">    
+      <div class="text-center">      
+        <a href="{% url 'play' %}"><button class="select-btn button1" type="submit">Let's Play</button></a>      
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

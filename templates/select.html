@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>QuizLorem | Select </title>
+{% endblock %}
+
+{% block body %}
+
+<section class="py-2">
+  <div class="container px-4 px-lg-5 mt-3">
+    
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content">
+      
+      {% for post in select_topic %}
+      <div class="col mb-5">
+        <div class="card h-100">
+          <!-- Quiz image-->
+          <img class="card-img-top" src="{{ post.thumbnail.url }}" alt="{{ post.thumbnail }}" />
+          
+          <div class="card-body p-4">
+            <div class="text-center">
+              <!-- Quiz name-->
+              <h5 class="fw-bolder">{{post.title}}</h5>
+              <!-- Product price-->
+            </div>
+          </div>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">              
+              <a href="{% url 'rule' %}"><button class="select-btn button1" type="submit">Select</button></a>
+              <!-- <a href="#" class="btn btn-outline-primary">Go somewhere</a> -->
+            </div>
+          </div>          
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>  
+  <br>
+</section>
+{% endblock %}

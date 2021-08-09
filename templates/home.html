@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block head %}
+    <title>QuizLorem | Home</title>
+{% endblock %}
+
+{% block body %}
+<div>
+  <img src="{% static 'img\school.png' %}" class="img-fluid" alt="Quiz Lorem" id="school">
+  <div class="bg-text">
+      <h4>Quiz<span style="color: #aee32f;">Lorem</span> High School</h4>
+      <h1 class="title_quiz" style="color: #aee32f;">Quiz Competition</h1>
+      <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Dolores commodi quas consequatur nostrum. Aliquid aperiam quidem dolorum a, 
+      voluptates tenetur. Praesentium quam rerum labore assumenda, quos molestiae corrupti 
+      eum architecto!</h6>
+  </div>
+
+  <div class="start-btn-align">
+    <a href="{% url 'select' %}">
+      <button class="start-btn" type="submit">Start Quiz</button>
+    </a>
+  </div>
+</div>
+<br> <br>
+{% endblock %}
